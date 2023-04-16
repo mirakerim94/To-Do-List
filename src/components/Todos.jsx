@@ -21,7 +21,6 @@ export const Todos = ({ data, deleteTodo, editTodo }) => {
   const [editValue, setEditValue] = useState("");
   const handleInput = (value) => setEditValue(value);
   
-
   return (
     <Stack
       mt={10}
@@ -91,12 +90,12 @@ export const Todos = ({ data, deleteTodo, editTodo }) => {
         )}
       </AnimatePresence>
 
-      <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnEsc size="sm">
-        <ModalOverlay />
-        <ModalContent bg="secondary.100">
-          <ModalHeader>Edit your to-do</ModalHeader>
+      <Modal  isOpen={isOpen} onClose={onClose} isCentered closeOnEsc size="sm">
+        <ModalOverlay bg="gray.300"/>
+        <ModalContent bg="white.500">
+          <ModalHeader >Edit your to-do</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
+          <ModalBody >
             <Input
               bg="white"
               value={editValue.text}
@@ -110,7 +109,8 @@ export const Todos = ({ data, deleteTodo, editTodo }) => {
               colorScheme="primary"
               mr={3}
               onClick={() => {
-                editTodo(editValue) ? onClose() : null
+                editTodo(editValue);
+                onClose()
               }}
             >
               Edit
