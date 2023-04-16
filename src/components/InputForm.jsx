@@ -10,7 +10,7 @@ export const InputForm = ({ add }) => {
     <Stack mt={10} direction="row" spacing={1}>
       <Input
         size="lg"
-        placeholder="Write new to-do"
+        placeholder="Write here your to-do"
         p={1}
         value={inputValue}
         onChange={handleChange}
@@ -19,7 +19,8 @@ export const InputForm = ({ add }) => {
         size="xl"
         p={2}
         px={3}
-        bg="secondary.300"
+        bg="secondary.500"
+        border="1px"
         icon={<SmallAddIcon />}
         onClick={() => (add(inputValue) ? setInputValue("") : null)}
       />
